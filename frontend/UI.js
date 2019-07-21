@@ -14,8 +14,8 @@ class UI {
             div.innerHTML = `
                 <div class="card m-2">
                     <div class="row">
-                        <div class="col-md-4">
-                            <img src="http://localhost:3000${book.imagePath}" class="image-fluid">
+                        <div class="col-md-4 image-container">
+                            <img src="${book.imagePath}" class="img-thumbnail m-auto d-block">
                         </div>
                         <div class="col-md-8">
                             <div class="card-block p-2">

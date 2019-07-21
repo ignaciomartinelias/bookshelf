@@ -1,7 +1,7 @@
 {
   "name": "bookshelf",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bookshelf App",
   "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
@@ -27,8 +27,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon backend/index.js --ignore frontend",
     "start": "cross-env NODE_ENV=production node backend/index.js",
+    "postinstall": "npm run build",
     "build": "cross-env NODE_ENV=production webpack",
-    "server-dev": "webpack-dev-server"
+    "server:dev": "webpack-dev-server"
   },
   "keywords": [],
   "author": "Ignacio Martin Elias",
