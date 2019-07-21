@@ -18,9 +18,9 @@ class UI {
                             <img src="${book.imagePath}" class="img-thumbnail m-auto d-block">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-block p-2">
-                                <h4>${book.title}</h4>
-                                <p class="card-text">${book.author}</p>
+                            <div class="card-block p-4">
+                                <h4 class="mr-4">${book.title}</h4>
+                                <p class="card-text">by <em>${book.author}</em></p>
                                 <a class="btn btn-danger delete" _id="${book._id}" href="#">X</a>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ class UI {
 
 	renderMessage(message, color, sec) {
         const div = document.createElement("div");
-        div.className = `alert alert-${color} message`;
+        div.className = `alert alert-${color} message animated fadeInDown`;
         div.appendChild(document.createTextNode(message));
 
 
@@ -62,8 +62,11 @@ class UI {
 
         container.insertBefore(div, bookForm);
         setTimeout(() => {
-            document.querySelector(".message").remove();
+            document.querySelector(".message").classList.add("fadeOutUp");
         }, sec);
+        setTimeout(() => {
+            document.querySelector(".message").remove();
+        }, sec+1000);
     }
 }
 
